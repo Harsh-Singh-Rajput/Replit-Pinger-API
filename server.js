@@ -6,6 +6,7 @@ import fetchAndPing from "./service/ping.js";
 
 const app = express();
 const PORT = 5000;
+Connect();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,5 +25,4 @@ app.use("/api/v1/site", siteRoute);
 
 app.listen(PORT, () => {
   console.log("Server started running ");
-  Connect();
 });

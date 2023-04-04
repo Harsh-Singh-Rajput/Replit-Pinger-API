@@ -1,6 +1,8 @@
 import express from 'express'
 import URL from '../models/urlModel.js'
 import { validateURL } from '../utils/validate.js'
+import pingSite from '../service/run.js'
+
 const router = express.Router()
 
 router.post("/create", async (req, res)=>{
@@ -19,6 +21,10 @@ router.post("/create", async (req, res)=>{
     }
     
     let savedURL = await URL.create({fullUrl:url})
+
+    if(savedURL){
+        pingSite([savedURL])
+    }
 
     return res.status(201).send({msg:'success', res:savedURL})
 

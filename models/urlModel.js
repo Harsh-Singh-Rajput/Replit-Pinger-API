@@ -10,7 +10,7 @@ const UrlSchema = new Schema(
 
     date:{
       type:String,
-      default: new Date(Date.now())
+      default: new Date(Date.now() - 1800000)
     }
   },
   { timestamps: true }

@@ -11,7 +11,7 @@ Connect();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-scheduler.schedule("30 * * * *", async () => {
+scheduler.schedule("20 * * * *", async () => {
     console.log('scheduling task');
     await fetchAndPing();
 });

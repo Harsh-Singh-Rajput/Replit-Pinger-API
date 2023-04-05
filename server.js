@@ -16,6 +16,8 @@ scheduler.schedule("20 * * * *", async () => {
     await fetchAndPing();
 });
 
+
+
 app.get("/", (req, res) => {
   res.send("Server is running");
 });

@@ -5,6 +5,13 @@ import pingSite from '../service/run.js'
 
 const router = express.Router()
 
+router.get("/get", async (req, res)=>{
+    
+    
+    const urlList = await URL.find()
+    return res.status(201).send({msg:'success', res:urlList})
+
+})
 router.post("/create", async (req, res)=>{
     let {url} = req.body
     if(url === null || !url){
